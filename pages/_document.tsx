@@ -1,4 +1,3 @@
-import React, { ReactElement } from "react";
 import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from "next/document";
 import { CssBaseline } from "@nextui-org/react";
 

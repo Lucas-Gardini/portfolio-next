@@ -1,21 +1,27 @@
 {
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@nextui-org/react": "^1.0.0-beta.6",
-    "next": "12.1.4",
-    "react": "18.0.0",
-    "react-dom": "18.0.0"
-  },
-  "devDependencies": {
-    "@types/node": "^17.0.31",
-    "@types/react": "^18.0.1",
-    "eslint": "8.12.0",
-    "eslint-config-next": "12.1.4"
-  }
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@nextui-org/react": "^1.0.0-beta.6",
+		"@react-spring/types": "^9.4.5-beta.2",
+		"next": "12.1.4",
+		"next-themes": "^0.1.1",
+		"react": "18.0.0",
+		"react-dom": "18.0.0",
+		"react-icons": "^4.3.1",
+		"react-spring": "v9.4.5-beta.2",
+		"use-dark-mode": "^2.3.1"
+	},
+	"devDependencies": {
+		"@types/node": "^17.0.31",
+		"@types/react": "^18.0.1",
+		"eslint": "8.12.0",
+		"eslint-config-next": "12.1.4",
+		"typescript": "^4.6.4"
+	}
 }
