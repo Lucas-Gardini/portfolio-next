@@ -1,1 +1,12 @@
 /* font-family: "Infinite Justice"; */
+
+.main {
+	display: flex;
+	flex-direction: column;
+	height: 1000vh;
+	width: 100%;
+}
+.me {
+	position: relative;
+	margin-right: auto;
+}

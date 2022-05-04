@@ -3,6 +3,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import useDarkMode from "use-dark-mode";
 import Header from "../components/Header";
 import "../styles/globals.css";
+import "../styles/components.css";
 
 const lightTheme = createTheme({
 	type: "light",
