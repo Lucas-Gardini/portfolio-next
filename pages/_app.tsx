@@ -4,6 +4,7 @@ import useDarkMode from "use-dark-mode";
 import Header from "../components/Header";
 import "../styles/globals.css";
 import "../styles/components.css";
+import "../styles/home.css";
 
 const lightTheme = createTheme({
 	type: "light",
@@ -32,7 +33,7 @@ function MyApp({ Component, pageProps }) {
 			}}
 		>
 			<NextUIProvider theme={darkMode.value ? darkTheme : lightTheme}>
-				<Header />
+				{/* <Header /> */}
 				<Component {...pageProps} />
 			</NextUIProvider>
 		</NextThemesProvider>

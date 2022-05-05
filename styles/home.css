@@ -1,0 +1,62 @@
+main {
+	width: 100vw;
+	height: 100vh;
+	background-image: url(/images/home-background.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+}
+
+main .content {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	background-color: rgba(30, 34, 37, 0.75);
+	display: flex;
+}
+
+main .content .container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+	background-color: #24282e;
+	height: 50%;
+	width: 50%;
+}
+
+main .content .container .faded-border {
+	position: absolute;
+	background-color: rgba(23, 201, 100, 0.2);
+	border: 5px solid;
+	border-color: rgba(23, 201, 100, 0.1);
+	border-radius: 100%;
+	padding: 5px;
+	top: -75px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main .content .container .faded-border .me {
+	width: 10rem;
+	height: 10rem;
+}
+
+main .content .container .contact {
+	position: absolute;
+	top: 50%;
+	height: 30px;
+	text-align: center;
+}
+
+main .content .container .contact .social {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 35px;
+}

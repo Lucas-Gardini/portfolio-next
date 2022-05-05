@@ -3,7 +3,6 @@ import { useSpring, animated } from "react-spring";
 import { GiPenguin, FaSun, FaMoon } from "./_icons";
 import useDarkMode from "use-dark-mode";
 import { useEffect, useState } from "react";
-import styles from "../styles/Components.module.css";
 
 export default function Header() {
 	const darkMode = useDarkMode(false);
@@ -25,7 +24,7 @@ export default function Header() {
 	};
 
 	return (
-		<animated.div style={{ position: "fixed", width: "100%", ...topdown }}>
+		<animated.div style={{ position: "fixed", width: "100%", zIndex: 9, ...topdown }}>
 			<Container style={{ paddingLeft: 0, paddingRight: 0, maxWidth: "100%" }}>
 				<Card
 					className={"custom-navbar" + (scrolled > 100 ? " blured-navbar" : "")}
