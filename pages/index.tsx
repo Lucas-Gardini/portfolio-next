@@ -73,7 +73,7 @@ export default function Home() {
 						<br />
 						Tenho experiência na criação de aplicações web, mobile, desktop e APIs.
 						<br />
-						Também tnho um pouco de conhecimento em computação em nuvem com{" "}
+						Também tenho um pouco de conhecimento em computação em nuvem com{" "}
 						<Link href="https://aws.amazon.com/pt/" target="_blank" rel="noreferrer">
 							AWS
 						</Link>
