@@ -1,7 +1,9 @@
 import Head from "next/head";
-import { Card, Col, Row, Button, Text, Grid, Link } from "@nextui-org/react";
+import { Card, Col, Row, Button, Text, Grid, Link, useTheme } from "@nextui-org/react";
 
 export default function Projetos() {
+	const { type, isDark } = useTheme();
+
 	return (
 		<div>
 			<Head>
@@ -14,7 +16,7 @@ export default function Projetos() {
 				<Grid.Container gap={2} justify={"center"}>
 					<Grid xs={12} sm={6}>
 						<Card css={{ w: "100%", h: "400px" }}>
-							<Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
+							<Card.Header css={{ position: "absolute", zIndex: 1, top: 5, backgroundColor: isDark ? "#111111" : "white" }}>
 								<Col>
 									<Text size={12} weight="bold" transform="uppercase" color="#9E9E9E">
 										React, NextJs, Vercel
@@ -31,6 +33,7 @@ export default function Projetos() {
 									bgBlur: "#0f111466",
 									bottom: 0,
 									zIndex: 1,
+									backgroundColor: isDark ? "#111111" : "white",
 								}}
 							>
 								<Row>
@@ -57,7 +60,7 @@ export default function Projetos() {
 
 					<Grid xs={12} sm={6}>
 						<Card css={{ w: "100%", h: "400px" }}>
-							<Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
+							<Card.Header css={{ position: "absolute", zIndex: 1, top: 5, backgroundColor: isDark ? "#111111" : "white" }}>
 								<Col>
 									<Text size={12} weight="bold" transform="uppercase" color="#9E9E9E">
 										React, Vite
@@ -80,6 +83,7 @@ export default function Projetos() {
 									bgBlur: "#0f111466",
 									bottom: 0,
 									zIndex: 1,
+									backgroundColor: isDark ? "#111111" : "white",
 								}}
 							>
 								<Row>
@@ -110,7 +114,7 @@ export default function Projetos() {
 
 					<Grid xs={12} sm={6}>
 						<Card css={{ w: "100%", h: "400px" }}>
-							<Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
+							<Card.Header css={{ position: "absolute", zIndex: 1, top: 5, backgroundColor: isDark ? "#111111" : "white" }}>
 								<Col>
 									<Text size={12} weight="bold" transform="uppercase" color="#9E9E9E">
 										Typescript, Discord.js, ytdl-core
@@ -133,6 +137,7 @@ export default function Projetos() {
 									bgBlur: "#0f111466",
 									bottom: 0,
 									zIndex: 1,
+									backgroundColor: isDark ? "#111111" : "white",
 								}}
 							>
 								<Row>
@@ -163,7 +168,7 @@ export default function Projetos() {
 
 					<Grid xs={12} sm={6}>
 						<Card css={{ w: "100%", h: "400px" }}>
-							<Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
+							<Card.Header css={{ position: "absolute", zIndex: 1, top: 5, backgroundColor: isDark ? "#111111" : "white" }}>
 								<Col>
 									<Text size={12} weight="bold" transform="uppercase" color="#9E9E9E">
 										Electron, Vue, MongoDB, React-Native
@@ -186,6 +191,7 @@ export default function Projetos() {
 									bgBlur: "#0f111466",
 									bottom: 0,
 									zIndex: 1,
+									backgroundColor: isDark ? "#111111" : "white",
 								}}
 							>
 								<Row>
