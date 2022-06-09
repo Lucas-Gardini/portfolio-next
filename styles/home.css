@@ -89,8 +89,8 @@ main {
 	width: 24px;
 	height: 24px;
 	margin-left: -12px;
-	border-left: 1px solid #fff;
-	border-bottom: 1px solid #fff;
+	border-left: 1px solid;
+	border-bottom: 1px solid;
 	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 	-webkit-animation: sdb04 2s infinite;

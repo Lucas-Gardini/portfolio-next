@@ -7,6 +7,7 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
 	const aboutRef = useRef(null);
+	const { type, isDark } = useTheme();
 
 	return (
 		<div className={styles.container}>
@@ -44,7 +45,7 @@ export default function Home() {
 							aboutRef.current.scrollIntoView({ behavior: "smooth" });
 						}}
 					>
-						<span className="scroll"></span>
+						<span style={{ borderColor: isDark ? "white" : "black" }} className="scroll"></span>
 					</a>
 				</div>
 			</main>
