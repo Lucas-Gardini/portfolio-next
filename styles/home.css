@@ -76,6 +76,9 @@ main {
 		width: 99%;
 		height: 250px;
 	}
+	.hide-mobile {
+		display: none;
+	}
 }
 
 /* https://codepen.io/nxworld/pen/OyRrGy */

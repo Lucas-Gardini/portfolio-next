@@ -38,7 +38,7 @@ export default function Header() {
 		<div>
 			<Card css={{ position: "fixed", mw: "100vw", borderRadius: 0, zIndex: 9999999 }} borderWeight="light">
 				<Card.Body style={{ display: "flex", flexDirection: "row" }}>
-					<Text b={true} style={{ marginRight: "auto" }}>
+					<Text className="hide-mobile" b={true} style={{ marginRight: "auto" }}>
 						Lucas Gardini
 					</Text>
 
@@ -73,7 +73,7 @@ export default function Header() {
 						))}
 					</div>
 
-					<div style={{ marginLeft: "auto", marginTop: "2.5px", marginBottom: "auto" }}>
+					<div className="hide-mobile" style={{ marginLeft: "auto", marginTop: "2.5px", marginBottom: "auto" }}>
 						<BsLinkedin
 							onClick={() => {
 								openInNewTab("https://www.linkedin.com/in/lucasgardini/");

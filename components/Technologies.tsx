@@ -98,6 +98,7 @@ export default function Technologies() {
 			<Text
 				css={{
 					textGradient: "45deg, $green600 -50%, $purple600 100%",
+					marginTop: "35px",
 				}}
 				weight="bold"
 			>
@@ -148,6 +149,7 @@ export default function Technologies() {
 			<Text
 				css={{
 					textGradient: "45deg, $green600 -50%, $purple600 100%",
+					marginTop: "35px",
 				}}
 				weight="bold"
 			>
@@ -279,6 +281,7 @@ export default function Technologies() {
 			<Text
 				css={{
 					textGradient: "45deg, $green600 -50%, $purple600 100%",
+					marginTop: "35px",
 				}}
 				weight="bold"
 			>
@@ -338,6 +341,7 @@ export default function Technologies() {
 			<Text
 				css={{
 					textGradient: "45deg, $green600 -50%, $purple600 100%",
+					marginTop: "35px",
 				}}
 				weight="bold"
 			>
