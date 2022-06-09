@@ -2,6 +2,7 @@ import { createTheme, NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import useDarkMode from "use-dark-mode";
 import Header from "../components/Header";
+
 import "../styles/globals.css";
 import "../styles/components.css";
 import "../styles/home.css";
@@ -33,7 +34,7 @@ function MyApp({ Component, pageProps }) {
 			}}
 		>
 			<NextUIProvider theme={darkMode.value ? darkTheme : lightTheme}>
-				{/* <Header /> */}
+				<Header />
 				<Component {...pageProps} />
 			</NextUIProvider>
 		</NextThemesProvider>

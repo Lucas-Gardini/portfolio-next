@@ -1,13 +1,23 @@
-.custom-navbar {
-	transition: 0.6s;
-	background: #17c964;
-	border: 1px solid rgba(255, 255, 255, 0.18);
+.social-nav-icon {
+	color: "#fff";
+	font-size: larger;
+	margin-right: 10px;
+	margin-top: auto;
 }
 
-.blured-navbar {
-	transition: 0.6s;
-	background: rgba(255, 255, 255, 0.15);
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
+.social-nav-icon:hover {
+	cursor: pointer;
+	color: rgb(165, 165, 165);
+}
+
+.social-nav-icon.linkedin:hover {
+	color: #0e65c4;
+}
+
+.social-nav-icon.facebook:hover {
+	color: #1094f4;
+}
+
+.social-nav-icon.sun:hover {
+	color: #fcb100;
 }

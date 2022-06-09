@@ -1,70 +1,119 @@
-import { Container, Card, Row, Button, Col, Switch } from "@nextui-org/react";
-import { useSpring, animated } from "react-spring";
-import { GiPenguin, FaSun, FaMoon } from "./_icons";
+import { Card, Link, Text, useTheme } from "@nextui-org/react";
+import { BsLinkedin, FaGithub, BsFacebook, BsMoonFill, BsSunFill } from "./Icons";
 import useDarkMode from "use-dark-mode";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export default function Header() {
 	const darkMode = useDarkMode(false);
-	const topdown = useSpring({ from: { top: -100 }, to: { top: 0 }, config: { bounce: 1 } });
+	const { type, isDark } = useTheme();
+	const [activePageIndex, setActivePageIndex] = useState(0);
 
-	const [scrolled, setScrolled] = useState(0);
+	const routes = useMemo(
+		() => [
+			{ name: "Início", href: "/" },
+			{ name: "Sobre", href: "/#sobre" },
+			{ name: "Projetos", href: "/projetos" },
+			{ name: "Currículo", href: "/curriculo" },
+			{ name: "Contato", href: "/contato" },
+		],
+		[]
+	);
 
-	useEffect(() => {
-		window.addEventListener("scroll", handleScroll, { passive: true });
-
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
-
-	const handleScroll = () => {
-		const position = window.pageYOffset;
-		setScrolled(position);
+	const openInNewTab = (url) => {
+		window.open(url, "_blank").focus();
 	};
 
+	useEffect(() => {
+		const path = window.location.pathname;
+
+		for (const route of routes) {
+			if (path === route.href) {
+				setActivePageIndex(routes.indexOf(route));
+				break;
+			}
+		}
+	}, [routes]);
+
 	return (
-		<animated.div style={{ position: "fixed", width: "100%", zIndex: 9, ...topdown }}>
-			<Container style={{ paddingLeft: 0, paddingRight: 0, maxWidth: "100%" }}>
-				<Card
-					className={"custom-navbar" + (scrolled > 100 ? " blured-navbar" : "")}
-					style={{ borderWidth: 0, borderRadius: 0, width: "100%" }}
-				>
-					<Row justify="space-between">
-						<Col style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-							<GiPenguin />
-						</Col>
+		<div>
+			<Card css={{ position: "fixed", mw: "100vw", borderRadius: 0, zIndex: 9999999 }} borderWeight="light">
+				<Card.Body style={{ display: "flex", flexDirection: "row" }}>
+					<Text b={true} style={{ marginRight: "auto" }}>
+						Lucas Gardini
+					</Text>
 
-						<Col style={{ display: "flex", flexDirection: "column", alignItems: "center" }}></Col>
-
-						<Col style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-							<Button
-								style={{ backgroundColor: "transparent" }}
-								onClick={() => {
-									if (darkMode.value === false) {
-										darkMode.enable();
-									} else {
-										darkMode.disable();
-									}
-								}}
-								size="md"
-								flat
-								rounded
-								ripple={false}
-								auto
-								color="error"
-								icon={
-									darkMode.value ? (
-										<FaSun color={darkMode.value ? "#fff" : "#21222c"} />
-									) : (
-										<FaMoon color={darkMode.value ? "#fff" : "#21222c"} />
-									)
+					<div
+						style={{
+							display: "flex",
+							flexDirection: "row",
+							justifyContent: "space-between",
+							alignItems: "center",
+							marginLeft: "auto",
+							marginRight: "auto",
+						}}
+					>
+						{routes.map((route, index) => (
+							<Link
+								// color={index === activePageIndex ? "success" : "text"}
+								href={route.href}
+								style={{ marginRight: "5px", marginLeft: "5px" }}
+								key={index}
+								css={
+									activePageIndex === index
+										? {
+												textGradient: "45deg, $green600 -20%, $green800 100%",
+										  }
+										: {
+												color: isDark ? "white" : "black",
+										  }
 								}
+							>
+								{route.name}
+							</Link>
+						))}
+					</div>
+
+					<div style={{ marginLeft: "auto", marginTop: "2.5px", marginBottom: "auto" }}>
+						<BsLinkedin
+							onClick={() => {
+								openInNewTab("https://www.linkedin.com/in/lucasgardini/");
+							}}
+							className="social-nav-icon linkedin"
+						/>
+						<BsFacebook
+							onClick={() => {
+								openInNewTab("https://www.facebook.com/lucasgardini.dias");
+							}}
+							className="social-nav-icon facebook"
+						/>
+						<FaGithub
+							onClick={() => {
+								openInNewTab("https://github.com/Lucas-Gardini");
+							}}
+							className="social-nav-icon"
+						/>
+						{isDark ? (
+							<BsSunFill
+								className="social-nav-icon sun"
+								onClick={() => {
+									darkMode.toggle();
+								}}
 							/>
-						</Col>
-					</Row>
-				</Card>
-			</Container>
-		</animated.div>
+						) : (
+							<BsMoonFill
+								className="social-nav-icon"
+								onClick={() => {
+									darkMode.toggle();
+								}}
+							/>
+						)}
+					</div>
+				</Card.Body>
+			</Card>
+
+			<Text css={{ position: "fixed", bottom: 0, width: "100vw", textAlign: "center", color: isDark ? "white" : "black" }}>
+				Copyright © {new Date().getFullYear()}- Lucas Gardini Dias
+			</Text>
+		</div>
 	);
 }
